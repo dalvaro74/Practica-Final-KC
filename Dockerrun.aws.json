@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "dalvaro/buster_py3_mongo:latest",
+      "Name": "dalvaro/buster_py3_mongo_v2:latest",
       "Update": "true"
     },
     "Ports": [
