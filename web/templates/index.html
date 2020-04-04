@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>My Airbnb Price Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: url(static/images/back_airbnb.png) no-repeat center center fixed;">
+ <div class="login">
+  <div class="logo">
+    <img src="static/images/logo-circulo-keepcoding-ajustado.png">
+  </div>
+
+	<h1>Nueva Funcionalidad !!! <br>Calcula el precio de tu piso</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="name" placeholder="Nombre" required="required" />
+      <input type="text" name="email" placeholder="e-mail" required="required" />
+      <input type="text" name="barrio" placeholder="Barrio" required="required" />
+      <!--<input type="text" name="room_type" placeholder="Tipo de habitacion" required="required" />-->
+      <select id="room_type" name="room_type" required="required">
+        <option value="" disabled selected>Tipo de habitacion</option>
+        <option value="Entire home/apt">Entire home/apt</option>
+        <option value="Private room">Private room</option>
+        <option value="Shared room">Shared room</option>
+      </select>
+      <input type="text" name="accommodates" placeholder="Capacidad" required="required" />
+      <input type="text" name="bathrooms" placeholder="Numero de baños" required="required" />
+      <!--<input type="text" name="cleaning_fee" placeholder="Precio servicio limpieza" required="required" />
+      <input type="text" name="extra_people" placeholder="Personas extra" required="required" />-->
+      <button type="submit" class="btn btn-primary btn-block btn-large">Calcular</button>
+    </form>    
+    {{ prediction_text|safe }} 
+ </div>
+
+
+</body>
+</html>

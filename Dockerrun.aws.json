@@ -1,0 +1,17 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "dalvaro/buster_py3_mongo:latest",
+      "Update": "true"
+    },
+    "Ports": [
+      {
+        "ContainerPort": "5000"
+      },
+      {
+        "HostPort": "27017",  
+        "ContainerPort": "27017"
+      }
+    ],
+    "Logging": "/var/log/nginx"
+  }

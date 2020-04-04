@@ -1,0 +1,6 @@
+model/images
+.vscode/
+*.log
+*.pyc
+model/data/airbnb-images-clean.csv
+model/data/airbnb-images.csv
