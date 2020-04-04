@@ -43,8 +43,8 @@ VOLUME ["/data/db"]
 EXPOSE 27017 5000
 
 # Start the app
-ADD start.sh /
-RUN chmod +x /start.sh
+ADD start.sh .
+RUN chmod +x start.sh
 
 CMD ["./start.sh"]
 #CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
